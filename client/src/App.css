@@ -1,0 +1,123 @@
+/* Css for Home Page */
+.text-justify{
+  text-align: justify;
+}
+
+
+/* src/App.css */
+
+/* Add global styles here */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Style the navigation bar (you can add your own navigation component) */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar-nav {
+  font-size: 1.2rem;
+}
+
+.nav-link {
+  color: #fff !important;
+  margin-right: 20px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Style the hero section */
+.hero {
+  background-image: url('D:/Ecom in MERN/client/public/images/backgound1.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 100px 0;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Style the Shop Now button */
+.hero button.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.hero button.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+
+/* Css for Contact us form */
+
+.contact-form{
+  
+    background-color: rgba(248, 247, 247, 0.819); /* Add a semi-transparent white background to the form container */
+    padding: 20px;
+    border-radius: 5px; /* Add rounded corners to the form container */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+
+}
+
+/* For Error Page margin */
+.Err-margin{
+  margin-bottom: 200px;
+  
+}
+
+
+/* CSS for card */
+.out{
+  transition: all 0.3 ease-in-out;
+}
+.out:hover{transform: scale(1.05);}
+
+.card:hover .card-body {
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 0px 10px ;
+
+}
+
+/* Css for Amount Increament and Decrement */
+.amount{
+  display: flex;
+  justify-content: space-around;
+}
+
+.custom-hr {
+  height: 4px; /* Adjust the height as needed */
+  background-color:black; /* Change the color as needed */
+  border: none;
+}
+
+
+/* Css for Single page parent image */
+.singlepage-height{
+  max-height: 100%;
+  height: 370px;
+  width: auto;
+}
