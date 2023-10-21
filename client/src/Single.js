@@ -92,8 +92,8 @@ const{category,
                   <div key={index} className="m-3" style={{width:"100px"}}>
                   <img src={item.url} style={{height:"100px" ,width:"100px"}} onMouseEnter={()=>changeit(index)} onMouseOut={()=>changeit(0)}  alt='Image' />
                   </div>
-                )
-                // https://github.com/66MHassan/Ecommerce-using-MERN-.git
+              )
+              
               )
             }
           </div>
