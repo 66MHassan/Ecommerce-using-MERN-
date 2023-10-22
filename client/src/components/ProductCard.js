@@ -5,6 +5,7 @@ import CurrencyFormater from './CurrencyFormater';
 const ProductCard = (data) => {
     const{id,name,image,price,category}=data;
   return (
+    //Card for product page 
     <Link to={`/single/${id}`}>
     <div className="container">
   <div className="card out" style={{height:"auto"}}>
