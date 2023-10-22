@@ -33,6 +33,7 @@ const prodReducer = (state, action) => {
                     isSingleLoading:false,
                     singleProduct:action.payload,
                 }
+                
 
 
         default:

@@ -45,7 +45,7 @@ const getSingleProduct=async(url)=>{
     useEffect(()=>{
         getProducts(Api)
     },[])
-    return (<AppContext.Provider value={{ ...state ,getSingleProduct}}>{children}</AppContext.Provider>);
+    return (<AppContext.Provider value={{ ...state ,getSingleProduct,getProducts}}>{children}</AppContext.Provider>);
 
 }
 

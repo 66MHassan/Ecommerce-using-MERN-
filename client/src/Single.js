@@ -80,7 +80,7 @@ const{category,
         <div className='col-12' >
           <div className="row" >
           {image && image[changeImage]?.url && (
-                <img src={image[changeImage].url} className='image-fluid singlepage-height' alt="product" />
+                <img src={image[changeImage].url} className='img-fluid singlepage-height' alt="product" />
               )}
           </div>
           </div>

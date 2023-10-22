@@ -2,7 +2,10 @@
 .out{
     transition: all 0.3 ease-in-out;
   }
-  .out:hover{transform: scale(1.05);}
+  .out:hover{
+    transform: scale(1.05);
+    color: white;
+  }
   
   .card:hover .card-body {
     background-color: rgba(0, 0, 0, 0.9);
