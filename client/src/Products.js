@@ -2,13 +2,12 @@ import React, { useContext, useState } from 'react'
 import "./products.css"
 import Filter from './components/Filter';
 import ProductList from './components/ProductList';
+import Filtration from './components/Filtration';
 import Sort from './components/Sort';
 
 const Products = () => {
-  const[totalProducts,setTotalProducts]=useState('');
-  const totalProd=(data)=>{
-    setTotalProducts(data);
-  }
+  
+  
   
   return (
     <div className="container">
@@ -43,29 +42,11 @@ const Products = () => {
         </div>
 
         {/* Right Column */}
-        <div className="col-md-9">
+        <div className="col-9">
           {/* Top Row */}
-          <div className="row mb-3">
-            <div className="col-md-6">
-              <h2>Totel Products :{totalProducts}</h2>
-              
+          <div className="row mb-3 ml-3">
+            <div className="col-12 mt-2">
               <Sort />
-            </div>
-            <div className="col-md-6">
-              {/* Search by Category */}
-              {/* <div className="input-group">
-                <select className="form-control">
-                  <option value="">All Categories</option>
-                  <option value="category1">Category 1</option>
-                  <option value="category2">Category 2</option> */}
-                  {/* Add more categories here */}
-                {/* </select> */}
-                {/* <div className="input-group-append">
-                  <button className="btn btn-outline-secondary" type="button">
-                    Search
-                  </button>
-                </div>
-              </div> */}
             </div>
           </div>
 
@@ -74,15 +55,9 @@ const Products = () => {
             
             {/* Example Product Cards */}
             <div className="col-md-12">
-            <ProductList totalProds={totalProd} />
-              {/* <div className="card">
-                <img src="product_image1.jpg" alt="Product 1" className="card-img-top" />
-                <div className="card-body">
-                  <h5 className="card-title">Product 1</h5>
-                  <p className="card-text">$50.00</p>
-                  <button className="btn btn-primary">Add to Cart</button>
-                </div>
-              </div> */}
+            {/* <ProductList totalProds={totalProd} name={filterData} /> */}
+            <ProductList />
+             
               
             </div>
 
