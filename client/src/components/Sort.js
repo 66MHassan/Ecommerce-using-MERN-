@@ -8,8 +8,9 @@ const Sort = () => {
   return (
     <>
     <div className="row mb-3 ml-3">
-            <div className="col-5 mt-4 ">
-              <h5>{`${productsCount}:Producds Avaible`}</h5>
+      <div className='col-1'></div>
+            <div className="col-4 mt-4 ">
+              <h6>{`${productsCount}:Producds Avaible`}</h6>
               
             </div>
             <div className="col-6 mt-3">

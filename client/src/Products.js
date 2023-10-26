@@ -17,28 +17,7 @@ const Products = () => {
 
           {/* filter Section */}
           <Filter />
-          {/* Category and Search Functionality */}
-          {/* <div className="card">
-            <div className="card-body"> */}
-              {/* Category Selection */}
-              {/* <select className="form-control">
-                <option value="">All Categories</option>
-                <option value="category1">Category 1</option>
-                <option value="category2">Category 2</option> */}
-                {/* Add more categories here */}
-              {/* </select>
-              <br /> */}
-              {/* Search Functionality */}
-              {/* <div className="input-group mb-3">
-                <input type="text" className="form-control" placeholder="Search by Company" />
-                <div className="input-group-append">
-                  <button className="btn btn-outline-secondary" type="button">
-                    Search
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div> */}
+          
         </div>
 
         {/* Right Column */}
