@@ -7,8 +7,10 @@ import reducer from "../reducer/filterReducer"
     filterProducts:[],
     allProducts:[],
     sortingValue:"lowest",
+    category:"All",
     filters:{
       text: "",
+      company:"All"
     }
  }
     
@@ -18,11 +20,18 @@ import reducer from "../reducer/filterReducer"
   
     const [state, dispatch] = useReducer(reducer, initialState);
   
+    //sorting portion
     const sortIt = (e) => {
       let userValue = e.target.value;
       dispatch({ type:"GET_VALUE", payload:userValue})
     };
+    useEffect(() => {
+      
+      dispatch({ type: "SORTING_PRODUCTS",payload:productData});
+      
+    }, [productData, state.sortingValue]);
 
+    // Search by name
     const filterIt=(e)=>{
       let name=e.target.name;
       let value=e.target.value;
@@ -32,18 +41,25 @@ import reducer from "../reducer/filterReducer"
     useEffect(() => {
       dispatch({type:"FILTER_PROD"})
     }, [state.filters]);
-  
+
+    //filter by company wise
+    const filterComp=(e)=>{
+      // let name=e.target.name;
+      let value=e.target.value;
+    return dispatch({type:"FILTER_COMPANY_VALUE",payload:{value}})
+    }
+
     useEffect(() => {
-      // dispatch({type:"FILTER_PROD"})
-      dispatch({ type: "SORTING_PRODUCTS",payload:productData});
-      
-    }, [productData, state.sortingValue]);
+      dispatch({type:"FILTER_PROD"})
+    }, [state.filters]);
+  
+    
   
     useEffect(() => {
       dispatch({ type: "FILTER_PRODUCTS", payload: productData });
     }, [productData]);
   
-    return <FilterContext.Provider value={{ ...state, sortIt ,filterIt}}>{children}</FilterContext.Provider>;
+    return <FilterContext.Provider value={{ ...state, sortIt ,filterIt,filterComp}}>{children}</FilterContext.Provider>;
   };
  
   

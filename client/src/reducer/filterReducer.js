@@ -52,16 +52,25 @@ switch (action.type){
                         ...state.filters,
                         [name]:value,
                     }
+                
                 }
 
                 case "FILTER_PROD" :
                     let newP;
                     let {allProducts}=state;
                     let tempFilterProduct=[...allProducts];
-                    const {text}=state.filters;
+                    const {text,category}=state.filters;
                     if (text){
                         newP=tempFilterProduct.filter((curEle)=>{
                             return curEle.name.toLowerCase().includes(text); 
+                        })
+                        console.log(newP)
+                        
+                    }
+                    if(category){
+                        console.log(category)
+                        newP=tempFilterProduct.filter((curEle)=>{
+                            return curEle.category === category; 
                         })
                         console.log(newP)
                     }
