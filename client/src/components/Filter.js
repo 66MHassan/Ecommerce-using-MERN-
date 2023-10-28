@@ -4,7 +4,7 @@ import { FilterContext } from '../context/FilterContext'
 const Filter = () => {
   const{ 
     filters:{text},
-    filterIt}=useContext(FilterContext)
+    filterIt,filterCate}=useContext(FilterContext)
 
     const buttonStyle = {
       background: "none",
@@ -18,12 +18,12 @@ const Filter = () => {
       </form>
 
       <div className='col-2'>
-        <button style={buttonStyle} name='category' value='All' onClick={filterIt} > All </button>
-        <button style={buttonStyle} name='category' value='mobile' onClick={filterIt} >Mobile</button>
-        <button style={buttonStyle} name='category' value='laptop' onClick={filterIt} > Laptop</button>
-        <button style={buttonStyle} name='category' value='computer' onClick={filterIt} >Computer</button>
-        <button style={buttonStyle} name='category' value='acessories' onClick={filterIt} >Accessories</button>
-        <button style={buttonStyle} name='category' value='watches' onClick={filterIt} >Watches</button>
+        <button style={buttonStyle} value='All' onClick={filterCate} > All </button>
+        <button style={buttonStyle} value='mobile' onClick={filterCate} >Mobile</button>
+        <button style={buttonStyle} value='laptop' onClick={filterCate} > Laptop</button>
+        <button style={buttonStyle} value='computer' onClick={filterCate} >Computer</button>
+        <button style={buttonStyle} value='acessories' onClick={filterCate} >Accessories</button>
+        <button style={buttonStyle} value='watches' onClick={filterCate} >Watches</button>
       </div>
     </div>
     </>

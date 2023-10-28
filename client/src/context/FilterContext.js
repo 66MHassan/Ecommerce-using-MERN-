@@ -10,7 +10,6 @@ import reducer from "../reducer/filterReducer"
     category:"All",
     filters:{
       text: "",
-      company:"All"
     }
  }
     
@@ -43,15 +42,14 @@ import reducer from "../reducer/filterReducer"
     }, [state.filters]);
 
     //filter by company wise
-    const filterComp=(e)=>{
-      // let name=e.target.name;
+    const filterCate=(e)=>{
       let value=e.target.value;
-    return dispatch({type:"FILTER_COMPANY_VALUE",payload:{value}})
+    return dispatch({type:"FILTER_CATEGORY_VALUE",payload:value})
     }
 
     useEffect(() => {
-      dispatch({type:"FILTER_PROD"})
-    }, [state.filters]);
+      dispatch({type:"FILTER_CATEGORY"})
+    }, [state.category]);
   
     
   
@@ -59,7 +57,7 @@ import reducer from "../reducer/filterReducer"
       dispatch({ type: "FILTER_PRODUCTS", payload: productData });
     }, [productData]);
   
-    return <FilterContext.Provider value={{ ...state, sortIt ,filterIt,filterComp}}>{children}</FilterContext.Provider>;
+    return <FilterContext.Provider value={{ ...state, sortIt ,filterIt,filterCate}}>{children}</FilterContext.Provider>;
   };
  
   

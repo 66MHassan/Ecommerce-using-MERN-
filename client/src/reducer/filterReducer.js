@@ -1,4 +1,5 @@
 const FilterReducer=(state,action)=>{
+    var {allProducts}=state;
 switch (action.type){
     case "FILTER_PRODUCTS":
         return {
@@ -57,28 +58,42 @@ switch (action.type){
 
                 case "FILTER_PROD" :
                     let newP;
-                    let {allProducts}=state;
                     let tempFilterProduct=[...allProducts];
-                    const {text,category}=state.filters;
+                    const {text}=state.filters;
                     if (text){
                         newP=tempFilterProduct.filter((curEle)=>{
                             return curEle.name.toLowerCase().includes(text); 
                         })
-                        console.log(newP)
                         
                     }
-                    if(category){
-                        console.log(category)
-                        newP=tempFilterProduct.filter((curEle)=>{
-                            return curEle.category === category; 
-                        })
-                        console.log(newP)
-                    }
+                    
                     return{
                         ...state,
                         filterProducts:newP,
                     }
-                    
+
+                 case "FILTER_CATEGORY_VALUE" :
+                    const valueCate=action.payload
+                return{
+                    ...state,
+                    category:valueCate,
+                }
+                case "FILTER_CATEGORY" :
+                    let filCate;
+                    let tempFilterCate=[...allProducts];
+                    const {category}=state;
+                    if(state.category==="All"){
+                        return filCate=tempFilterCate;
+                    }
+                    else if(category){
+                        filCate=tempFilterCate.filter((curEle)=>{
+                            return curEle.category === category; 
+                        })
+                    }
+                    return{
+                        ...state,
+                        filterProducts:filCate,
+                    }
         
         default:
         return state;
