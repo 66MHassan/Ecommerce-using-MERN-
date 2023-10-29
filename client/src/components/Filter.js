@@ -4,9 +4,10 @@ import { FilterContext } from '../context/FilterContext'
 const Filter = () => {
   const{ 
     filters:{text},
-    filterIt,filterCate}=useContext(FilterContext)
+    filterIt,filterCate,clearIt}=useContext(FilterContext)
 
     const buttonStyle = {
+      padding:"5px",
       background: "none",
       border: 'none',
     };
@@ -17,7 +18,7 @@ const Filter = () => {
       <input type="text" name="text" value={text} onChange={filterIt} placeholder='SEARCH'/>
       </form>
 
-      <div className='col-2'>
+      <div className='col-2 mt-3'>
         <button style={buttonStyle} value='All' onClick={filterCate} > All </button>
         <button style={buttonStyle} value='mobile' onClick={filterCate} >Mobile</button>
         <button style={buttonStyle} value='laptop' onClick={filterCate} > Laptop</button>
@@ -26,6 +27,7 @@ const Filter = () => {
         <button style={buttonStyle} value='watch' onClick={filterCate} >Watches</button>
       </div>
     </div>
+    <div className="btn btn-danger mt-4" onClick={clearIt}>Cleat Filter</div>
     </>
   )
 }

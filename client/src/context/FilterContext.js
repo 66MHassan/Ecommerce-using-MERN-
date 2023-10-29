@@ -10,7 +10,8 @@ import reducer from "../reducer/filterReducer"
     category:"All",
     filters:{
       text: "",
-    }
+    },
+
  }
     
  
@@ -41,7 +42,7 @@ import reducer from "../reducer/filterReducer"
       dispatch({type:"FILTER_PROD"})
     }, [state.filters]);
 
-    //filter by company wise
+    //filter by Category wise
     const filterCate=(e)=>{
       let value=e.target.value;
     return dispatch({type:"FILTER_CATEGORY_VALUE",payload:value})
@@ -51,13 +52,17 @@ import reducer from "../reducer/filterReducer"
       dispatch({type:"FILTER_CATEGORY"})
     }, [state.category]);
   
+// To Clear filters 
+   const clearIt=()=>{
+    dispatch({type:"CLEAR_FILTER"})
+   }
     
   
     useEffect(() => {
       dispatch({ type: "FILTER_PRODUCTS", payload: productData });
     }, [productData]);
   
-    return <FilterContext.Provider value={{ ...state, sortIt ,filterIt,filterCate}}>{children}</FilterContext.Provider>;
+    return <FilterContext.Provider value={{ ...state, sortIt ,filterIt,filterCate,clearIt}}>{children}</FilterContext.Provider>;
   };
  
   
