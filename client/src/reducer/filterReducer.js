@@ -82,10 +82,7 @@ switch (action.type){
                     let filCate;
                     let tempFilterCate=[...allProducts];
                     const {category}=state;
-                    if(state.category==="All"){
-                        return filCate=tempFilterCate;
-                    }
-                    else if(category){
+                      if(category){
                         filCate=tempFilterCate.filter((curEle)=>{
                             return curEle.category === category; 
                         })

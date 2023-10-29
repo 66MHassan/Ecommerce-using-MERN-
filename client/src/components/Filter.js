@@ -22,8 +22,8 @@ const Filter = () => {
         <button style={buttonStyle} value='mobile' onClick={filterCate} >Mobile</button>
         <button style={buttonStyle} value='laptop' onClick={filterCate} > Laptop</button>
         <button style={buttonStyle} value='computer' onClick={filterCate} >Computer</button>
-        <button style={buttonStyle} value='acessories' onClick={filterCate} >Accessories</button>
-        <button style={buttonStyle} value='watches' onClick={filterCate} >Watches</button>
+        <button style={buttonStyle} value='accessories' onClick={filterCate} >Accessories</button>
+        <button style={buttonStyle} value='watch' onClick={filterCate} >Watches</button>
       </div>
     </div>
     </>
