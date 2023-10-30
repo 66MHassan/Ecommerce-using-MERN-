@@ -6,6 +6,7 @@ import { Link, useParams } from 'react-router-dom';
 import CurrencyFormater from './components/CurrencyFormater';
 import Star from './components/Star';
 import CartAmount from './components/CartAmount';
+import { CartContext } from './context/CartContext';
 
 
 const Single = () => {
@@ -14,7 +15,9 @@ const Single = () => {
   const[amount,setAmount]=useState(1)
   const Api="https://api.pujakaitem.com/api/products";
   const {getSingleProduct,singleProduct,isLoadingSingle}=useContext(AppContext);
+  const {addToCart}=useContext(CartContext);
   const {id}=useParams();
+
   useEffect(()=>{
     getSingleProduct(`${Api}?id=${id}`);
   },[])
@@ -33,7 +36,6 @@ const{category,
   reviews,
   stars,
   stock}=singleProduct;
-  console.log(image)
 
   //Code for changing Image 
   const changeit=(index)=>{
@@ -69,7 +71,7 @@ const{category,
           <p>ID : {id}</p>
           <p>brand : {company}</p>
           <CartAmount amount={amount} setIncreasing={setIncreasing} setDecreasing={setDecreasing}/>
-          <Link to='/Cart'><button className='btn btn-primary'>Add to Cart</button></Link>
+          <Link to='/Cart'><button className='btn btn-primary' onClick={()=>addToCart(id,amount,singleProduct)}>Add to Cart</button></Link>
           <hr className="custom-hr" />
           {/* Add more product information here */}
         </div>
