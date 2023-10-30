@@ -17,6 +17,7 @@ const Single = () => {
   const {getSingleProduct,singleProduct,isLoadingSingle}=useContext(AppContext);
   const {addToCart}=useContext(CartContext);
   const {id}=useParams();
+  
 
   useEffect(()=>{
     getSingleProduct(`${Api}?id=${id}`);

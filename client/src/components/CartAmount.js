@@ -5,7 +5,7 @@ import '../App.css'
 const CartAmount = ({amount,setIncreasing,setDecreasing}) => {
 
   return (
-    <div className='col-2 amount' >
+    <div className='col-2 d-flex' >
     <i onClick={()=>setDecreasing()}><AiOutlineMinus /></i>
     <p >{amount}</p>
     <i onClick={()=>setIncreasing()}><AiOutlinePlus /></i>

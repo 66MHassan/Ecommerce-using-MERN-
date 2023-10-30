@@ -95,7 +95,6 @@ body {
 /* Css for Amount Increament and Decrement */
 .amount{
   display: flex;
-  justify-content: space-around;
 }
 
 .custom-hr {
