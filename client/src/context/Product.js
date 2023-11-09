@@ -6,6 +6,7 @@ import reducer from "../reducer/prodReducer"
 const AppContext=createContext();
 const Api = "https://api.pujakaitem.com/api/products";
 
+
 const intialstate={
     isLoading:false, 
     isError:false,
@@ -23,6 +24,7 @@ const getProducts=async(url)=>
         try{
         const res=await axios.get(url)
         const productData=await res.data;
+        console.log(productData)
         dispatch({type:"MY_DATA",payload:productData});
          
     } catch (error) {
