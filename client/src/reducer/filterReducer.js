@@ -2,6 +2,7 @@ const FilterReducer = (state, action) => {
     var { allProducts } = state;
     switch (action.type) {
         case "FILTER_PRODUCTS":
+            console.log("Action Payload:", action.payload);
             return {
                 ...state,
                 filterProducts: [...action.payload],
@@ -65,6 +66,8 @@ const FilterReducer = (state, action) => {
                     return curEle.name.toLowerCase().includes(text);
                 })
 
+            }else {
+                newP = tempFilterProduct; // Set newP to the original array if text filter is not present
             }
 
             return {
