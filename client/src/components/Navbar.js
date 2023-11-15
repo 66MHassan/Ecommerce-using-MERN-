@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import "./navbar.css";
+import { useAuth0 } from "@auth0/auth0-react";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const Navbar = () => {
+    const { loginWithRedirect } = useAuth0();
     return (
         <>
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -31,6 +33,9 @@ const Navbar = () => {
                             </li>
                             <li className="nav-item">
                                 <Link to="contact" className="nav-link">Contact</Link>
+                            </li>
+                            <li>
+                            <button onClick={() => loginWithRedirect()}>Log In</button>
                             </li>
                             <li className="nav-item">
                                 <Link to="cart" className="nav-link">Cart</Link>
