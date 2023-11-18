@@ -1,24 +1,12 @@
 const express=require("express")
 const app=express();
+const userRouter=require("./routes/userRouter")
 const port=8000;
 
 app.use(express.json());
 
-const getAllProducts=(req,res)=>{
-    res.send("this is my home page ")
-}
-
-const createProduct=(req,res)=>{
-    console.log(req.body);
-    res.send("done");
-}
-
-const router=express.Router("/api/v1/product")
-router.route("/")
-.get(getAllProducts).post(createProduct);
-
-// app.get("/api/v1/product",getAllProducts)
-// app.post("/api/v1/product",createProduct)
+//User Routing 
+app.use("/api/v1/product",userRouter)
 
 
 
