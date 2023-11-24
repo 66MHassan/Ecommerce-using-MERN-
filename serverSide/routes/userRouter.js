@@ -4,6 +4,6 @@ const controller=require("../controllers/userController")
 
 router
 .route("/")
-.get(controller.getAllProducts).post(controller.createProduct)
+.get(controller.getAllUsers).post(controller.createUser)
 
 module.exports=router;
