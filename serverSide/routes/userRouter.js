@@ -1,9 +1,9 @@
 const express=require("express")
 const router=express.Router()
-const controller=require("../controllers/userController")
+const userController=require("../controllers/userController")
 
 router
 .route("/")
-.get(controller.getAllUsers).post(controller.createUser)
+.get(userController.getAllUsers).post(userController.createUser)
 
 module.exports=router;
