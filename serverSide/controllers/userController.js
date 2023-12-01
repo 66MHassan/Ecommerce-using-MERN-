@@ -11,12 +11,14 @@ exports.getAllUsers=async (req,res)=>{
 }
 
 exports.createUser= async(req,res)=>{
-    const{name,email}=req.body;
+    
     try{
-
-        const newUser=new User({name,email});
-        await newUser.save();
+        // const{name,email,password}=req.body;
+        // const newUser=new User({name,email,password});
+        // await newUser.save();
+        const newUser=await User.create(req.body)
         res.send(newUser);
+        console.log(newUser)
 
     } catch (err){
         console.log(err)
@@ -24,5 +26,5 @@ exports.createUser= async(req,res)=>{
     }
 
     
-    res.send("done");
+   
 }
