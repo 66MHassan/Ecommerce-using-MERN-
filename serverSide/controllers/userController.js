@@ -10,7 +10,7 @@ exports.getAllUsers=async (req,res)=>{
    }
 }
 
-exports.createUser= async(req,res)=>{
+exports.register= async(req,res)=>{
     
     try{
         // const{name,email,password}=req.body;

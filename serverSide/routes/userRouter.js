@@ -4,6 +4,10 @@ const userController=require("../controllers/userController")
 
 router
 .route("/")
-.get(userController.getAllUsers).post(userController.createUser)
+.get(userController.getAllUsers)
+
+router
+.route("/register")
+.post(userController.register)
 
 module.exports=router;
