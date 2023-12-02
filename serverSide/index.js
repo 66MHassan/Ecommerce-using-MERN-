@@ -1,15 +1,15 @@
 const express = require("express");
+require('dotenv').config()
 const app = express();
 const mongoose = require('mongoose');
 const userRouter = require("./routes/userRouter");
 const productRouter=require("./routes/productRouter")
 const bodyParser = require('body-parser');
 
-const uri = "mongodb+srv://hassankhan662000:SPyP8lFLG9cfZLa8@ecom.8t3y4v4.mongodb.net/HassanStore?retryWrites=true&w=majority";
 
 app.use(bodyParser.json());
 
-
+const uri=process.env.MONGODB_URI;
 // Connecting to the Database
 mongoose.connect(uri, {
   // useUnifiedTopology: true,these are now not use in the latest version
